@@ -46,20 +46,42 @@ specTitle.forEach(function(title) {
 
   // Part 5
 
-var races = document.getElementById("favorite-things");
+  const pastraces = document.getElementById('past-races')
+  pastraces.removeChild(pastraces.children[3])
 
   // Part 6
 
+  const newRace = document.createElement('li')
+  newRace.textContent = "New York"
+  pastraces.appendChild(newRace)
 
   // Part 7
 
+  const firstParent = document.querySelector('.main')
+  const newBlogPost = document.createElement('div')
+  newBlogPost.classList.add('blog-post','black')
+  firstParent.appendChild(newBlogPost)
+  const newH1 = document.createElement('h1')
+  newH1.textContent = "New York"
+  newBlogPost.appendChild(newH1)
+  newP = document.createElement('p')
+  newP.textContent='I raced in New York'
+  newBlogPost.appendChild(newP)
 
   // Part 8
 
+  const quoteTitle = document.getElementById('quote-title')
+  //console.log(quoteTitle)
+  quoteTitle.addEventListener("click", randomQuote)
 
   // Part 9
 
-
+  const blogPostClassElements = document.querySelectorAll(".blog-post")
+  for(let each of blogPostClassElements){
+  each.addEventListener("mouseenter",() => {each.classList.toggle("red")})
+  each.addEventListener("mouseout",() => {each.classList.toggle("purple")})
+  }
+  });
 
 
 });
